@@ -272,6 +272,70 @@
     </div>
   </section>
 
+  <!-- 20d. GAME 1 full-bleed -->
+  <section class="slide slide--bleed">
+    <div class="slide__bg" style="background:#3a3650 url('assets/game-forge/game1-wave2.png') center/cover no-repeat;"></div>
+    <div class="slide__scrim" style="background: linear-gradient(to top, rgba(0,0,0,.85) 0%, rgba(0,0,0,.3) 45%, transparent 100%);"></div>
+    <div class="slide__content">
+      <p class="slide__label reveal" style="color:rgba(80,250,123,.85);">game · co-op wave shooter</p>
+      <h2 class="slide__heading reveal">Multiplayer waves, peers leveling live.</h2>
+      <p class="slide__subtitle reveal" style="color:rgba(255,255,255,.75); margin-top:8px;">3 peers · per-player HP · per-player XP · kill / crit / dmg HUD · spec mechanics intact, end to end.</p>
+    </div>
+  </section>
+
+  <!-- 20e. GAME 1 split (two moments) -->
+  <section class="slide slide--split">
+    <div class="slide__panels" style="grid-template-columns:1fr 1fr;">
+      <div class="slide__panel" style="background:#2a2640; padding:0; position:relative;">
+        <img src="assets/game-forge/game1-wave1.png" alt="wave 1 opening" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+        <div style="position:absolute; bottom:0; left:0; right:0; padding:20px 28px; background:linear-gradient(to top, rgba(0,0,0,.85), transparent); color:#fff;">
+          <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:1.5px; color:var(--accent); text-transform:uppercase;">T+0 · WAVE 1 OPEN</div>
+          <div style="font-family:var(--font-display); font-size:clamp(18px,2.4vw,26px); font-weight:700; margin-top:4px;">Kills:4 · Dmg:140</div>
+        </div>
+      </div>
+      <div class="slide__panel" style="background:#2a2640; padding:0; position:relative;">
+        <img src="assets/game-forge/game1-wave2.png" alt="wave progress" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+        <div style="position:absolute; bottom:0; left:0; right:0; padding:20px 28px; background:linear-gradient(to top, rgba(0,0,0,.85), transparent); color:#fff;">
+          <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:1.5px; color:var(--accent); text-transform:uppercase;">SAME RUN · MID-WAVE</div>
+          <div style="font-family:var(--font-display); font-size:clamp(18px,2.4vw,26px); font-weight:700; margin-top:4px;">Kills:22 · Crits:2 · Dmg:660 · LV.5</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 20f. GAME 2 full-bleed (deckbuilder shop) -->
+  <section class="slide slide--bleed">
+    <div class="slide__bg" style="background:#2a1f18 url('assets/game-forge/game2-shop.png') center/cover no-repeat;"></div>
+    <div class="slide__scrim" style="background: linear-gradient(to top, rgba(0,0,0,.8) 0%, rgba(0,0,0,.2) 50%, transparent 100%);"></div>
+    <div class="slide__content">
+      <p class="slide__label reveal" style="color:rgba(80,250,123,.85);">game · dice roguelike</p>
+      <h2 class="slide__heading reveal">Relics, Forge, Items — full economy.</h2>
+      <p class="slide__subtitle reveal" style="color:rgba(255,255,255,.75); margin-top:8px;">Act/Blind progression · 6 relics priced &amp; described · Sell slot · Next-Blind target · NPC patter. UI hand-illustrated, all generated.</p>
+    </div>
+  </section>
+
+  <!-- 20g. GAME 2 split — play screen -->
+  <section class="slide slide--split">
+    <div class="slide__panels" style="grid-template-columns:3fr 2fr;">
+      <div class="slide__panel" style="background:#1a1410; padding:0; position:relative;">
+        <img src="assets/game-forge/game2-play.png" alt="dice play screen" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div class="slide__panel" style="background:var(--surface); gap:14px;">
+        <p class="slide__label reveal" style="color:var(--accent);">play screen · combos</p>
+        <h2 class="slide__heading reveal" style="font-size:clamp(22px,3.2vw,32px);">Multi-Pair lands +700.</h2>
+        <ul class="slide__bullets" style="margin-top:6px;">
+          <li class="reveal"><strong>7 combo tiers</strong> — Pair → Quint</li>
+          <li class="reveal">Element dice — fire / water / wind</li>
+          <li class="reveal">Boss card · Ash Hound · Servant of Pyroclast</li>
+          <li class="reveal">Score breakdown: Base · Dice · Relics · ×Mult</li>
+        </ul>
+        <p class="reveal" style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim); margin-top:8px; padding-top:12px; border-top:1px solid var(--border);">
+          the spec's Mechanics Catalog → playable in browser.
+        </p>
+      </div>
+    </div>
+  </section>
+
 
   <!-- 3. QUOTE: thesis -->
   <section class="slide slide--quote" style="background-image: radial-gradient(ellipse at 50% 50%, var(--accent-dim) 0%, transparent 40%);">
@@ -635,70 +699,6 @@ flowchart TB
     </div>
   </section>
 
-
-  <!-- 20d. GAME 1 full-bleed -->
-  <section class="slide slide--bleed">
-    <div class="slide__bg" style="background:#3a3650 url('assets/game-forge/game1-wave2.png') center/cover no-repeat;"></div>
-    <div class="slide__scrim" style="background: linear-gradient(to top, rgba(0,0,0,.85) 0%, rgba(0,0,0,.3) 45%, transparent 100%);"></div>
-    <div class="slide__content">
-      <p class="slide__label reveal" style="color:rgba(80,250,123,.85);">game · co-op wave shooter</p>
-      <h2 class="slide__heading reveal">Multiplayer waves, peers leveling live.</h2>
-      <p class="slide__subtitle reveal" style="color:rgba(255,255,255,.75); margin-top:8px;">3 peers · per-player HP · per-player XP · kill / crit / dmg HUD · spec mechanics intact, end to end.</p>
-    </div>
-  </section>
-
-  <!-- 20e. GAME 1 split (two moments) -->
-  <section class="slide slide--split">
-    <div class="slide__panels" style="grid-template-columns:1fr 1fr;">
-      <div class="slide__panel" style="background:#2a2640; padding:0; position:relative;">
-        <img src="assets/game-forge/game1-wave1.png" alt="wave 1 opening" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
-        <div style="position:absolute; bottom:0; left:0; right:0; padding:20px 28px; background:linear-gradient(to top, rgba(0,0,0,.85), transparent); color:#fff;">
-          <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:1.5px; color:var(--accent); text-transform:uppercase;">T+0 · WAVE 1 OPEN</div>
-          <div style="font-family:var(--font-display); font-size:clamp(18px,2.4vw,26px); font-weight:700; margin-top:4px;">Kills:4 · Dmg:140</div>
-        </div>
-      </div>
-      <div class="slide__panel" style="background:#2a2640; padding:0; position:relative;">
-        <img src="assets/game-forge/game1-wave2.png" alt="wave progress" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
-        <div style="position:absolute; bottom:0; left:0; right:0; padding:20px 28px; background:linear-gradient(to top, rgba(0,0,0,.85), transparent); color:#fff;">
-          <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:1.5px; color:var(--accent); text-transform:uppercase;">SAME RUN · MID-WAVE</div>
-          <div style="font-family:var(--font-display); font-size:clamp(18px,2.4vw,26px); font-weight:700; margin-top:4px;">Kills:22 · Crits:2 · Dmg:660 · LV.5</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 20f. GAME 2 full-bleed (deckbuilder shop) -->
-  <section class="slide slide--bleed">
-    <div class="slide__bg" style="background:#2a1f18 url('assets/game-forge/game2-shop.png') center/cover no-repeat;"></div>
-    <div class="slide__scrim" style="background: linear-gradient(to top, rgba(0,0,0,.8) 0%, rgba(0,0,0,.2) 50%, transparent 100%);"></div>
-    <div class="slide__content">
-      <p class="slide__label reveal" style="color:rgba(80,250,123,.85);">game · dice roguelike</p>
-      <h2 class="slide__heading reveal">Relics, Forge, Items — full economy.</h2>
-      <p class="slide__subtitle reveal" style="color:rgba(255,255,255,.75); margin-top:8px;">Act/Blind progression · 6 relics priced &amp; described · Sell slot · Next-Blind target · NPC patter. UI hand-illustrated, all generated.</p>
-    </div>
-  </section>
-
-  <!-- 20g. GAME 2 split — play screen -->
-  <section class="slide slide--split">
-    <div class="slide__panels" style="grid-template-columns:3fr 2fr;">
-      <div class="slide__panel" style="background:#1a1410; padding:0; position:relative;">
-        <img src="assets/game-forge/game2-play.png" alt="dice play screen" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
-      </div>
-      <div class="slide__panel" style="background:var(--surface); gap:14px;">
-        <p class="slide__label reveal" style="color:var(--accent);">play screen · combos</p>
-        <h2 class="slide__heading reveal" style="font-size:clamp(22px,3.2vw,32px);">Multi-Pair lands +700.</h2>
-        <ul class="slide__bullets" style="margin-top:6px;">
-          <li class="reveal"><strong>7 combo tiers</strong> — Pair → Quint</li>
-          <li class="reveal">Element dice — fire / water / wind</li>
-          <li class="reveal">Boss card · Ash Hound · Servant of Pyroclast</li>
-          <li class="reveal">Score breakdown: Base · Dice · Relics · ×Mult</li>
-        </ul>
-        <p class="reveal" style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim); margin-top:8px; padding-top:12px; border-top:1px solid var(--border);">
-          the spec's Mechanics Catalog → playable in browser.
-        </p>
-      </div>
-    </div>
-  </section>
 
   <!-- 21. QUOTE: closing thesis -->
   <section class="slide slide--quote" style="background-image:radial-gradient(ellipse at 50% 50%, var(--accent-dim) 0%, transparent 40%);">
