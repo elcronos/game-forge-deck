@@ -382,14 +382,14 @@ flowchart LR
       <div class="slide__aside reveal">
         <svg viewBox="0 0 220 240" width="220" height="240">
           <g font-family="var(--font-mono)" font-size="9" fill="var(--text-dim)">
-            <rect x="10" y="10" width="90" height="22" fill="var(--surface)" stroke="var(--accent)" stroke-width="1" rx="3"/><text x="55" y="25" text-anchor="middle">§1 Elevator</text>
-            <rect x="10" y="38" width="90" height="22" fill="var(--surface)" stroke="var(--accent-2)" stroke-width="1" rx="3"/><text x="55" y="53" text-anchor="middle">§3 Loops</text>
-            <rect x="10" y="66" width="90" height="22" fill="var(--surface)" stroke="var(--accent-3)" stroke-width="1" rx="3"/><text x="55" y="81" text-anchor="middle">§4 Mechanics</text>
-            <rect x="10" y="94" width="90" height="22" fill="var(--surface)" stroke="var(--yellow)" stroke-width="1" rx="3"/><text x="55" y="109" text-anchor="middle">§6 Feel</text>
-            <rect x="120" y="10" width="90" height="22" fill="var(--surface)" stroke="var(--accent)" stroke-width="1" rx="3"/><text x="165" y="25" text-anchor="middle">§7 Tech</text>
-            <rect x="120" y="38" width="90" height="22" fill="var(--surface)" stroke="var(--accent-2)" stroke-width="1" rx="3"/><text x="165" y="53" text-anchor="middle">§9 UX</text>
-            <rect x="120" y="66" width="90" height="22" fill="var(--surface)" stroke="var(--accent-3)" stroke-width="1" rx="3"/><text x="165" y="81" text-anchor="middle">§10 Tests</text>
-            <rect x="120" y="94" width="90" height="22" fill="var(--surface)" stroke="var(--yellow)" stroke-width="1" rx="3"/><text x="165" y="109" text-anchor="middle">§11 Stories</text>
+            <rect x="10" y="10" width="90" height="22" fill="var(--surface)" stroke="var(--accent)" stroke-width="1" rx="3"/><text x="55" y="25" text-anchor="middle">Elevator</text>
+            <rect x="10" y="38" width="90" height="22" fill="var(--surface)" stroke="var(--accent-2)" stroke-width="1" rx="3"/><text x="55" y="53" text-anchor="middle">Core Loops</text>
+            <rect x="10" y="66" width="90" height="22" fill="var(--surface)" stroke="var(--accent-3)" stroke-width="1" rx="3"/><text x="55" y="81" text-anchor="middle">Mechanics</text>
+            <rect x="10" y="94" width="90" height="22" fill="var(--surface)" stroke="var(--yellow)" stroke-width="1" rx="3"/><text x="55" y="109" text-anchor="middle">Feel</text>
+            <rect x="120" y="10" width="90" height="22" fill="var(--surface)" stroke="var(--accent)" stroke-width="1" rx="3"/><text x="165" y="25" text-anchor="middle">Tech Stack</text>
+            <rect x="120" y="38" width="90" height="22" fill="var(--surface)" stroke="var(--accent-2)" stroke-width="1" rx="3"/><text x="165" y="53" text-anchor="middle">UX</text>
+            <rect x="120" y="66" width="90" height="22" fill="var(--surface)" stroke="var(--accent-3)" stroke-width="1" rx="3"/><text x="165" y="81" text-anchor="middle">Tests</text>
+            <rect x="120" y="94" width="90" height="22" fill="var(--surface)" stroke="var(--yellow)" stroke-width="1" rx="3"/><text x="165" y="109" text-anchor="middle">Build Stories</text>
             <rect x="65" y="130" width="90" height="22" fill="var(--accent-dim)" stroke="var(--accent)" stroke-width="2" rx="3"/><text x="110" y="145" text-anchor="middle" fill="var(--accent)" font-weight="700">ASSEMBLE</text>
             <line x1="110" y1="118" x2="110" y2="128" stroke="var(--accent)" stroke-width="1.5"/>
             <rect x="40" y="170" width="140" height="22" fill="var(--surface)" stroke="var(--accent)" stroke-width="1" rx="3"/><text x="110" y="185" text-anchor="middle" fill="var(--text)">game-{slug}-spec.md</text>
@@ -478,14 +478,14 @@ flowchart LR
 
   <!-- 17. PIPELINE: build → test → gate -->
   <section class="slide" style="background-image:radial-gradient(ellipse at 30% 30%, var(--accent-dim) 0%, transparent 45%);">
-    <p class="slide__label reveal">phase 6 + 6.5 · runs for every build story in §11</p>
+    <p class="slide__label reveal">phase 6 + 6.5 · runs for every story in the Build Stories section</p>
     <h2 class="slide__heading reveal">Each story walks 4 gates before it counts as done.</h2>
-    <p class="slide__body reveal" style="margin-top:8px; max-width:80ch;">Spec §11 enumerates dozens of build stories (e.g. <code style="color:var(--accent);">STORY-INV-007</code>). The watchdog picks one at a time and runs it through this loop. A story can only be marked <strong style="color:var(--accent);">done</strong> when all 4 gates pass — otherwise it loops back into Build.</p>
+    <p class="slide__body reveal" style="margin-top:8px; max-width:80ch;">The spec's Build Stories section enumerates dozens of build stories (e.g. <code style="color:var(--accent);">STORY-INV-007</code>). The watchdog picks one at a time and runs it through this loop. A story can only be marked <strong style="color:var(--accent);">done</strong> when all 4 gates pass — otherwise it loops back into Build.</p>
     <div class="pipeline reveal">
       <div class="pipeline__step" style="border-top-color:var(--accent);">
         <div class="pipeline__num">01 · BUILD</div>
         <div class="pipeline__name">Story landed</div>
-        <div class="pipeline__desc">Executor implements §11 story per acceptance criteria.</div>
+        <div class="pipeline__desc">Executor implements one story per its acceptance criteria.</div>
       </div>
       <div class="pipeline__arrow"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 12h14m-4-4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="pipeline__step" style="border-top-color:var(--accent-2);">
@@ -497,7 +497,7 @@ flowchart LR
       <div class="pipeline__step" style="border-top-color:var(--accent-3);">
         <div class="pipeline__num">03 · GATE</div>
         <div class="pipeline__name">Playable check</div>
-        <div class="pipeline__desc">Launch runtime. First screen from §9 must render. Unit-green ≠ playable.</div>
+        <div class="pipeline__desc">Launch runtime. First screen from the UX flow must render. Unit-green ≠ playable.</div>
       </div>
       <div class="pipeline__arrow"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 12h14m-4-4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="pipeline__step" style="border-top-color:var(--yellow);">
@@ -527,7 +527,7 @@ flowchart LR
         <h2 class="slide__heading reveal" style="font-size:clamp(24px,3.8vw,40px);">Playwright proves<br/>the screen.</h2>
         <ul class="slide__bullets" style="margin-top:14px;">
           <li class="reveal"><code style="background:var(--accent-dim); color:var(--accent); padding:1px 6px; border-radius:3px; font-size:.9em;">npm run dev</code> + headless browse</li>
-          <li class="reveal">First §9 screen renders for real</li>
+          <li class="reveal">First UX-flow screen renders for real</li>
           <li class="reveal">Happy path is reachable</li>
           <li class="reveal">Else: <code style="background:var(--accent-dim); color:var(--accent); padding:1px 6px; border-radius:3px; font-size:.9em;">NEEDS_INTEGRATION.md</code> + loop</li>
         </ul>
@@ -581,14 +581,14 @@ flowchart TB
 
   subgraph S3["P3 · Spec (parallel writers)"]
     direction LR
-    GA["§1·2·12"]
-    GB["§3 loops"]
-    GC["§4 mechanics"]
-    GD["§5·6 feel"]
-    GE["§7·8 tech"]
-    GF["§9 UX"]
-    GG["§10·11 tests · stories"]
-    GH["§13·14 risks"]
+    GA["Elevator + Context + Cuts"]
+    GB["Core Loops"]
+    GC["Mechanics Catalog"]
+    GD["Progression + Feel"]
+    GE["Tech + Assets"]
+    GF["UX & Accessibility"]
+    GG["Tests + Build Stories"]
+    GH["Risks + Critique Log"]
   end
   GA & GB & GC & GD & GE & GF & GG & GH --> ASM["assemble-spec.sh"]
   ASM --> SPEC2[("game-{slug}-spec.md<br/>14 sections")]
@@ -608,7 +608,7 @@ flowchart TB
   APIL --> LOOP
   subgraph LOOP["P5+6 · per story"]
     direction LR
-    BUILD["executor<br/>implements §11 story"] --> TEST["game-test<br/>Playwright / recipe"]
+    BUILD["executor<br/>implements one build story"] --> TEST["game-test<br/>Playwright / recipe"]
     TEST --> GATE65{"P6.5<br/>playable<br/>gate"}
   end
   GATE65 -- fail --> NEEDS["NEEDS_INTEGRATION.md<br/>+ UI-INT-001"]
@@ -617,7 +617,7 @@ flowchart TB
   NEXT -- yes --> BUILD
   NEXT -- no --> DONE([game shipped<br/>capcarde.itch.io])
 
-  DONE -.change.-> P7["P7 · update<br/>§4 + §11 + test"]
+  DONE -.change.-> P7["P7 · update<br/>Mechanics + Stories + test"]
   P7 -.-> BUILD
 
   classDef gate fill:#ff79c622,stroke:#ff79c6,stroke-width:2px
@@ -643,7 +643,7 @@ flowchart TB
     <div class="slide__content">
       <p class="slide__label reveal" style="color:rgba(80,250,123,.85);">game · co-op wave shooter</p>
       <h2 class="slide__heading reveal">Multiplayer waves, peers leveling live.</h2>
-      <p class="slide__subtitle reveal" style="color:rgba(255,255,255,.75); margin-top:8px;">3 peers · per-player HP · per-player XP · kill / crit / dmg HUD · spec §4 mechanics intact, end to end.</p>
+      <p class="slide__subtitle reveal" style="color:rgba(255,255,255,.75); margin-top:8px;">3 peers · per-player HP · per-player XP · kill / crit / dmg HUD · spec mechanics intact, end to end.</p>
     </div>
   </section>
 
@@ -694,7 +694,7 @@ flowchart TB
           <li class="reveal">Score breakdown: Base · Dice · Relics · ×Mult</li>
         </ul>
         <p class="reveal" style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim); margin-top:8px; padding-top:12px; border-top:1px solid var(--border);">
-          spec §4 mechanics catalog → playable in browser.
+          the spec's Mechanics Catalog → playable in browser.
         </p>
       </div>
     </div>
