@@ -130,8 +130,10 @@
   .slide--diagram .mermaid svg { width:100%!important; height:auto!important; max-width:100%!important; }
   .slide--diagram .mermaid .nodeLabel { font-size:17px!important; }
   .slide--diagram .mermaid .edgeLabel { font-size:13px!important; font-family: var(--font-mono)!important; }
-  .mermaid .nodeLabel { color: var(--text)!important; }
-  .mermaid .edgeLabel { color: var(--text-dim)!important; background-color: var(--bg)!important; }
+  .mermaid .nodeLabel, .mermaid .nodeLabel * { color: var(--text)!important; fill: var(--text)!important; }
+  .mermaid .cluster-label, .mermaid .cluster-label * { color: var(--text)!important; fill: var(--text)!important; }
+  .mermaid .edgeLabel, .mermaid .edgeLabel * { color: var(--text-dim)!important; background-color: var(--bg)!important; fill: var(--text-dim)!important; }
+  .mermaid text { fill: var(--text)!important; }
 
   /* PIPELINE */
   .pipeline { display:flex; align-items:stretch; gap:0; flex:1; min-height:0; margin-top: clamp(12px,2vh,24px); }
@@ -299,9 +301,9 @@ flowchart LR
   P65 -- pass --> P7["7 · Change<br/>Protocol"]
   P65 -- fail --> P5
 
-  classDef gate fill:#ff79c622,stroke:#ff79c6,stroke-width:2px,color:#c8d6e5
-  classDef build fill:#50fa7b22,stroke:#50fa7b,stroke-width:2px,color:#c8d6e5
-  classDef spec fill:#8be9fd22,stroke:#8be9fd,stroke-width:2px,color:#c8d6e5
+  classDef gate fill:#ff79c622,stroke:#ff79c6,stroke-width:2px
+  classDef build fill:#50fa7b22,stroke:#50fa7b,stroke-width:2px
+  classDef spec fill:#8be9fd22,stroke:#8be9fd,stroke-width:2px
 
   class P0,P2,P65 gate
   class P1,P3 spec
@@ -392,7 +394,7 @@ flowchart LR
             <line x1="110" y1="118" x2="110" y2="128" stroke="var(--accent)" stroke-width="1.5"/>
             <rect x="40" y="170" width="140" height="22" fill="var(--surface)" stroke="var(--accent)" stroke-width="1" rx="3"/><text x="110" y="185" text-anchor="middle" fill="var(--text)">game-{slug}-spec.md</text>
             <line x1="110" y1="152" x2="110" y2="168" stroke="var(--accent)" stroke-width="1.5"/>
-            <text x="110" y="215" text-anchor="middle" font-size="9" letter-spacing="1.5">PARALLEL WRITERS · NO STREAM TIMEOUT</text>
+            <text x="110" y="215" text-anchor="middle" font-size="10" fill="var(--text-dim)" font-weight="600">8 PARALLEL WRITERS</text>
           </g>
         </svg>
       </div>
@@ -618,11 +620,11 @@ flowchart TB
   DONE -.change.-> P7["P7 · update<br/>§4 + §11 + test"]
   P7 -.-> BUILD
 
-  classDef gate fill:#ff79c622,stroke:#ff79c6,stroke-width:2px,color:#c8d6e5
-  classDef build fill:#50fa7b22,stroke:#50fa7b,stroke-width:2px,color:#c8d6e5
-  classDef spec fill:#8be9fd22,stroke:#8be9fd,stroke-width:2px,color:#c8d6e5
-  classDef artifact fill:#f1fa8c22,stroke:#f1fa8c,stroke-width:2px,color:#c8d6e5
-  classDef terminal fill:#ffb86c22,stroke:#ffb86c,stroke-width:2px,color:#c8d6e5
+  classDef gate fill:#ff79c622,stroke:#ff79c6,stroke-width:2px
+  classDef build fill:#50fa7b22,stroke:#50fa7b,stroke-width:2px
+  classDef spec fill:#8be9fd22,stroke:#8be9fd,stroke-width:2px
+  classDef artifact fill:#f1fa8c22,stroke:#f1fa8c,stroke-width:2px
+  classDef terminal fill:#ffb86c22,stroke:#ffb86c,stroke-width:2px
 
   class P0,TRIAGE,GATE65,MODE,NEXT gate
   class DI,GA,GB,GC,GD,GE,GF,GG,GH,ASM spec
