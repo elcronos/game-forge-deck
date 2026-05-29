@@ -429,8 +429,8 @@ flowchart LR
           <span style="font-family:var(--font-mono); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent-2);">Feel</span>
           <span style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim);">w = 0.15</span>
         </div>
-        <p style="font-family:var(--font-display); font-size: clamp(14px,1.5vw,17px); font-weight:600; line-height:1.4; color:var(--text);">"On a crit, how many ms of hitpause + how much screenshake amplitude?"</p>
-        <p style="font-size: clamp(11px,1.1vw,13px); color:var(--text-dim); line-height:1.5; font-family:var(--font-mono);">probes: numbers w/ units, reference games</p>
+        <p style="font-family:var(--font-display); font-size: clamp(14px,1.5vw,17px); font-weight:600; line-height:1.4; color:var(--text);">"When a kill lands, what makes it satisfying — sound, screen-shake, freeze-frame? Name a reference game."</p>
+        <p style="font-size: clamp(11px,1.1vw,13px); color:var(--text-dim); line-height:1.5; font-family:var(--font-mono);">probes: input-to-feedback latency, juice</p>
       </div>
 
       <div style="background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent-3); border-radius:8px; padding: clamp(14px,2vh,20px) clamp(14px,1.6vw,22px); display:flex; flex-direction:column; gap:8px;">
@@ -465,8 +465,8 @@ flowchart LR
           <span style="font-family:var(--font-mono); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent);">Success</span>
           <span style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim);">w = 0.15</span>
         </div>
-        <p style="font-family:var(--font-display); font-size: clamp(14px,1.5vw,17px); font-weight:600; line-height:1.4; color:var(--text);">"Which one number tells you wave 5 is fun, not just survived?"</p>
-        <p style="font-size: clamp(11px,1.1vw,13px); color:var(--text-dim); line-height:1.5; font-family:var(--font-mono);">probes: testable metric, threshold</p>
+        <p style="font-family:var(--font-display); font-size: clamp(14px,1.5vw,17px); font-weight:600; line-height:1.4; color:var(--text);">"After one playtest, what single observation proves the game works — or kills it?"</p>
+        <p style="font-size: clamp(11px,1.1vw,13px); color:var(--text-dim); line-height:1.5; font-family:var(--font-mono);">probes: pass/fail criterion · measurable</p>
       </div>
 
     </div>
@@ -650,8 +650,8 @@ flowchart LR
       <span class="slide__code-filename">overnight.config.json</span>
       <pre><code>{
   <span class="cm">// what to build</span>
-  <span class="hl">"project_slug"</span>: <span class="str">"glyphfall"</span>,
-  <span class="hl">"spec_path"</span>: <span class="str">".omc/specs/game-glyphfall-spec.md"</span>,
+  <span class="hl">"project_slug"</span>: <span class="str">"alien-waves"</span>,
+  <span class="hl">"spec_path"</span>: <span class="str">"specs/alien-waves-spec.md"</span>,
 
   <span class="cm">// budget caps — watchdog self-disarms on hit</span>
   <span class="hl">"max_hours"</span>: <span class="num">12</span>,
@@ -665,7 +665,7 @@ flowchart LR
   <span class="cm">// notify + branch</span>
   <span class="hl">"notify_on"</span>: [<span class="str">"blocker"</span>, <span class="str">"done"</span>, <span class="str">"cap_hit"</span>],
   <span class="hl">"autocommit"</span>: <span class="num">true</span>,
-  <span class="hl">"checkpoint_branch"</span>: <span class="str">"overnight/glyphfall"</span>
+  <span class="hl">"checkpoint_branch"</span>: <span class="str">"overnight/alien-waves"</span>
 }</code></pre>
     </div>
   </section>
