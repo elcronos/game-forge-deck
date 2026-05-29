@@ -408,6 +408,70 @@ flowchart LR
 
 
 
+  <!-- 8b. CONTENT: alien-waves sample interview -->
+  <section class="slide" style="background-image:radial-gradient(ellipse at 80% 20%, var(--accent-dim) 0%, transparent 50%);">
+    <p class="slide__label reveal">Phase 1 — Deep Interview · worked example</p>
+    <h2 class="slide__heading reveal">What the interview asked for <em>alien-waves</em>.</h2>
+    <p class="slide__body reveal" style="margin-top:8px; max-width:90ch;">6 dimensions × ~5 questions each. Below: one representative probe per dimension. Each answer feeds the LLM judge that scores <code style="color:var(--accent);">a<sub>i</sub></code> on the next slide.</p>
+    <div class="reveal" style="display:grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); gap: clamp(12px,1.8vw,20px); margin-top: clamp(18px,2.5vh,28px); flex:1; min-height:0;">
+
+      <div style="background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; padding: clamp(14px,2vh,20px) clamp(14px,1.6vw,22px); display:flex; flex-direction:column; gap:8px;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+          <span style="font-family:var(--font-mono); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent);">Core Loop</span>
+          <span style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim);">w = 0.25</span>
+        </div>
+        <p style="font-family:var(--font-display); font-size: clamp(14px,1.5vw,17px); font-weight:600; line-height:1.4; color:var(--text);">"What happens in the first 5 seconds after a peer joins a wave?"</p>
+        <p style="font-size: clamp(11px,1.1vw,13px); color:var(--text-dim); line-height:1.5; font-family:var(--font-mono);">probes: spawn, aggro, first kill, XP feedback</p>
+      </div>
+
+      <div style="background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent-2); border-radius:8px; padding: clamp(14px,2vh,20px) clamp(14px,1.6vw,22px); display:flex; flex-direction:column; gap:8px;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+          <span style="font-family:var(--font-mono); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent-2);">Feel</span>
+          <span style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim);">w = 0.15</span>
+        </div>
+        <p style="font-family:var(--font-display); font-size: clamp(14px,1.5vw,17px); font-weight:600; line-height:1.4; color:var(--text);">"On a crit, how many ms of hitpause + how much screenshake amplitude?"</p>
+        <p style="font-size: clamp(11px,1.1vw,13px); color:var(--text-dim); line-height:1.5; font-family:var(--font-mono);">probes: numbers w/ units, reference games</p>
+      </div>
+
+      <div style="background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent-3); border-radius:8px; padding: clamp(14px,2vh,20px) clamp(14px,1.6vw,22px); display:flex; flex-direction:column; gap:8px;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+          <span style="font-family:var(--font-mono); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent-3);">Scope</span>
+          <span style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim);">w = 0.15</span>
+        </div>
+        <p style="font-family:var(--font-display); font-size: clamp(14px,1.5vw,17px); font-weight:600; line-height:1.4; color:var(--text);">"3 peers fixed, or 2–8? Solo with bots? Cut list before I write a line."</p>
+        <p style="font-size: clamp(11px,1.1vw,13px); color:var(--text-dim); line-height:1.5; font-family:var(--font-mono);">probes: MVP vs stretch, explicit cuts</p>
+      </div>
+
+      <div style="background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--yellow); border-radius:8px; padding: clamp(14px,2vh,20px) clamp(14px,1.6vw,22px); display:flex; flex-direction:column; gap:8px;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+          <span style="font-family:var(--font-mono); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--yellow);">Goal</span>
+          <span style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim);">w = 0.15</span>
+        </div>
+        <p style="font-family:var(--font-display); font-size: clamp(14px,1.5vw,17px); font-weight:600; line-height:1.4; color:var(--text);">"Why open alien-waves at midnight instead of Vampire Survivors?"</p>
+        <p style="font-size: clamp(11px,1.1vw,13px); color:var(--text-dim); line-height:1.5; font-family:var(--font-mono);">probes: differentiator in one sentence</p>
+      </div>
+
+      <div style="background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--orange); border-radius:8px; padding: clamp(14px,2vh,20px) clamp(14px,1.6vw,22px); display:flex; flex-direction:column; gap:8px;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+          <span style="font-family:var(--font-mono); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--orange);">Constraints</span>
+          <span style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim);">w = 0.15</span>
+        </div>
+        <p style="font-family:var(--font-display); font-size: clamp(14px,1.5vw,17px); font-weight:600; line-height:1.4; color:var(--text);">"Engine? Multiplayer wire — WebRTC P2P or server-authoritative?"</p>
+        <p style="font-size: clamp(11px,1.1vw,13px); color:var(--text-dim); line-height:1.5; font-family:var(--font-mono);">probes: stack, export target, deps</p>
+      </div>
+
+      <div style="background:var(--surface); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:8px; padding: clamp(14px,2vh,20px) clamp(14px,1.6vw,22px); display:flex; flex-direction:column; gap:8px;">
+        <div style="display:flex; justify-content:space-between; align-items:baseline;">
+          <span style="font-family:var(--font-mono); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent);">Success</span>
+          <span style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim);">w = 0.15</span>
+        </div>
+        <p style="font-family:var(--font-display); font-size: clamp(14px,1.5vw,17px); font-weight:600; line-height:1.4; color:var(--text);">"Which one number tells you wave 5 is fun, not just survived?"</p>
+        <p style="font-size: clamp(11px,1.1vw,13px); color:var(--text-dim); line-height:1.5; font-family:var(--font-mono);">probes: testable metric, threshold</p>
+      </div>
+
+    </div>
+  </section>
+
   <!-- 9. CONTENT: ambiguity formula -->
   <section class="slide slide--content slide--grid" style="background-image:radial-gradient(ellipse at 20% 80%, var(--accent-dim) 0%, transparent 50%);">
     <div class="slide__inner">
