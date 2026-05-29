@@ -135,6 +135,10 @@
   .slide--diagram .mermaid svg { width:100%!important; height:auto!important; max-width:100%!important; }
   .slide--diagram .mermaid .nodeLabel { font-size:17px!important; }
   .slide--diagram .mermaid .edgeLabel { font-size:13px!important; font-family: var(--font-mono)!important; }
+  .mermaid-wrap--large .mermaid svg { width:auto!important; max-width:none!important; }
+  .mermaid-wrap--large .mermaid .nodeLabel { font-size:22px!important; font-weight:600!important; }
+  .mermaid-wrap--large .mermaid .edgeLabel { font-size:16px!important; }
+  .mermaid-wrap--large .mermaid .cluster-label { font-size:20px!important; font-weight:700!important; }
   .mermaid .nodeLabel, .mermaid .nodeLabel * { color: var(--text)!important; fill: var(--text)!important; }
   .mermaid .cluster-label, .mermaid .cluster-label * { color: var(--text)!important; fill: var(--text)!important; }
   .mermaid .edgeLabel, .mermaid .edgeLabel * { color: var(--text-dim)!important; background-color: var(--bg)!important; fill: var(--text-dim)!important; }
@@ -587,13 +591,14 @@ flowchart LR
   <section class="slide slide--content slide--grid" style="background-image:radial-gradient(ellipse at 10% 20%, var(--accent-dim) 0%, transparent 50%);">
     <div class="slide__inner">
       <div>
-        <p class="slide__label reveal">Phase 3 — Spec Crystallization</p>
-        <h2 class="slide__heading reveal">Karpathy heavy spec.</h2>
-        <ul class="slide__bullets">
-          <li class="reveal"><strong>Exhaustive</strong> over concise. Every decision written, every rejected alternative logged.</li>
-          <li class="reveal"><strong>Mechanical</strong> over poetic. State machines, not prose. Numbers with units.</li>
-          <li class="reveal"><strong>Testable</strong> over aspirational. Every feature has acceptance criteria.</li>
-          <li class="reveal">14 sections · 6000–9000 lines · spawned across <strong>6–8 parallel executors</strong></li>
+        <p class="slide__label reveal">Phase 3 — write the full plan</p>
+        <h2 class="slide__heading reveal">Three rules for a spec Claude can actually build from.</h2>
+        <p class="slide__body reveal" style="margin-top:8px;">Named after Andrej Karpathy's pattern: don't summarize, don't hand-wave, don't aspire. Spell it out so an AI can execute mechanically.</p>
+        <ul class="slide__bullets" style="margin-top:14px;">
+          <li class="reveal"><strong>Write everything down.</strong> Every decision in the doc — even the ones you rejected, and why.</li>
+          <li class="reveal"><strong>Use numbers, not vibes.</strong> "Fast" isn't a spec. "Player runs at 4 tiles / sec" is.</li>
+          <li class="reveal"><strong>Every feature has a way to prove it works.</strong> If you can't test it, you can't ship it.</li>
+          <li class="reveal" style="color:var(--text); font-family:var(--font-mono); font-size:clamp(13px,1.4vw,15px); padding-top:6px;">~7000 lines · 14 sections · written by <strong>8 AI agents in parallel</strong></li>
         </ul>
       </div>
       <div class="slide__aside reveal">
@@ -615,6 +620,48 @@ flowchart LR
           </g>
         </svg>
       </div>
+    </div>
+  </section>
+
+  <!-- 11a2. CONTENT: rules → flow mapping -->
+  <section class="slide" style="background-image:radial-gradient(ellipse at 80% 80%, var(--accent-dim) 0%, transparent 50%);">
+    <p class="slide__label reveal">where the 3 rules show up</p>
+    <h2 class="slide__heading reveal">Each rule plugs into a different part of the flow.</h2>
+    <div class="reveal" style="display:grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px,2vw,24px); margin-top: clamp(20px,3vh,32px); flex:1; min-height:0;">
+
+      <div style="background:var(--surface); border:1px solid var(--border); border-top:3px solid var(--accent); border-radius:10px; padding: clamp(16px,2.5vh,24px); display:flex; flex-direction:column; gap:10px;">
+        <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent);">Rule 1 · Write everything down</div>
+        <div style="font-family:var(--font-display); font-size: clamp(16px,1.9vw,22px); font-weight:700; letter-spacing:-.3px;">No detail left to "we'll figure it out"</div>
+        <div style="font-size: clamp(12px,1.3vw,15px); color:var(--text-dim); line-height:1.55;">
+          <strong style="color:var(--text);">Shows up in:</strong> Phase 1 Interview keeps asking until every dimension is answered. Phase 3 writes the full doc — including rejected ideas + why.
+        </div>
+        <div style="margin-top:auto; padding-top:10px; border-top:1px solid var(--border); font-family:var(--font-mono); font-size:11px; color:var(--orange);">
+          skip it → AI invents what you didn't decide
+        </div>
+      </div>
+
+      <div style="background:var(--surface); border:1px solid var(--border); border-top:3px solid var(--accent-2); border-radius:10px; padding: clamp(16px,2.5vh,24px); display:flex; flex-direction:column; gap:10px;">
+        <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent-2);">Rule 2 · Numbers, not vibes</div>
+        <div style="font-family:var(--font-display); font-size: clamp(16px,1.9vw,22px); font-weight:700; letter-spacing:-.3px;">Every claim is measurable</div>
+        <div style="font-size: clamp(12px,1.3vw,15px); color:var(--text-dim); line-height:1.55;">
+          <strong style="color:var(--text);">Shows up in:</strong> Phase 3 spec uses state machines + numbers w/ units. Phase 6 tests can then assert exact values — not "feels fast."
+        </div>
+        <div style="margin-top:auto; padding-top:10px; border-top:1px solid var(--border); font-family:var(--font-mono); font-size:11px; color:var(--orange);">
+          skip it → tests can't tell pass from fail
+        </div>
+      </div>
+
+      <div style="background:var(--surface); border:1px solid var(--border); border-top:3px solid var(--accent-3); border-radius:10px; padding: clamp(16px,2.5vh,24px); display:flex; flex-direction:column; gap:10px;">
+        <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent-3);">Rule 3 · Provable features</div>
+        <div style="font-family:var(--font-display); font-size: clamp(16px,1.9vw,22px); font-weight:700; letter-spacing:-.3px;">Untestable = unshippable</div>
+        <div style="font-size: clamp(12px,1.3vw,15px); color:var(--text-dim); line-height:1.55;">
+          <strong style="color:var(--text);">Shows up in:</strong> Phase 6 runs unit + integration tests automatically. Phase 6.5 opens the game in Playwright + screenshots prove the effect.
+        </div>
+        <div style="margin-top:auto; padding-top:10px; border-top:1px solid var(--border); font-family:var(--font-mono); font-size:11px; color:var(--orange);">
+          skip it → green tests, broken game
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -758,7 +805,7 @@ flowchart LR
   <section class="slide slide--diagram">
     <p class="slide__label reveal">every agent · every gate · every artifact</p>
     <h2 class="slide__heading reveal">Full end-to-end</h2>
-    <div class="mermaid-wrap reveal">
+    <div class="mermaid-wrap mermaid-wrap--large reveal">
       <div class="zoom-controls">
         <button onclick="zoomDiagram(this,1.2)" title="Zoom in">+</button>
         <button onclick="zoomDiagram(this,0.8)" title="Zoom out">&minus;</button>
