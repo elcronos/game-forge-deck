@@ -136,11 +136,11 @@
   .mermaid text { fill: var(--text)!important; }
 
   /* PIPELINE */
-  .pipeline { display:flex; align-items:stretch; gap:0; flex:1; min-height:0; margin-top: clamp(12px,2vh,24px); }
-  .pipeline__step { flex:1; background: var(--surface); border:1px solid var(--border); border-top:3px solid var(--accent); border-radius:10px; padding: clamp(14px,2.5vh,28px) clamp(10px,1.2vw,18px); display:flex; flex-direction:column; min-width:0; }
-  .pipeline__num { font-size: clamp(10px,1.1vw,13px); font-weight:600; color: var(--accent); letter-spacing:1.5px; font-family: var(--font-mono); }
-  .pipeline__name { font-size: clamp(13px,1.5vw,18px); font-weight:700; margin: 6px 0; font-family: var(--font-display); letter-spacing:-.3px; }
-  .pipeline__desc { font-size: clamp(11px,1.1vw,13px); color: var(--text-dim); line-height:1.45; flex:1; }
+  .pipeline { display:flex; align-items:stretch; gap:0; margin-top: clamp(16px,2.5vh,28px); }
+  .pipeline__step { flex:1; background: var(--surface); border:1px solid var(--border); border-top:3px solid var(--accent); border-radius:10px; padding: clamp(14px,2vh,20px) clamp(12px,1.4vw,18px); display:flex; flex-direction:column; min-width:0; }
+  .pipeline__num { font-size: clamp(10px,1.1vw,12px); font-weight:600; color: var(--accent); letter-spacing:1.5px; font-family: var(--font-mono); }
+  .pipeline__name { font-size: clamp(15px,1.7vw,19px); font-weight:700; margin: 6px 0 8px; font-family: var(--font-display); letter-spacing:-.3px; }
+  .pipeline__desc { font-size: clamp(13px,1.3vw,15px); color: var(--text-dim); line-height:1.5; }
   .pipeline__arrow { display:flex; align-items:center; padding: 0 4px; color: var(--accent); flex-shrink:0; opacity:.4; }
 
   /* DASHBOARD */
@@ -690,32 +690,32 @@ flowchart LR
 
   <!-- 17. PIPELINE: build → test → gate -->
   <section class="slide" style="background-image:radial-gradient(ellipse at 30% 30%, var(--accent-dim) 0%, transparent 45%);">
-    <p class="slide__label reveal">phase 6 + 6.5 · runs for every story in the Build Stories section</p>
-    <h2 class="slide__heading reveal">Each story walks 4 gates before it counts as done.</h2>
-    <p class="slide__body reveal" style="margin-top:8px; max-width:80ch;">The spec's Build Stories section enumerates dozens of build stories (e.g. <code style="color:var(--accent);">STORY-INV-007</code>). The watchdog picks one at a time and runs it through this loop. A story can only be marked <strong style="color:var(--accent);">done</strong> when all 4 gates pass — otherwise it loops back into Build.</p>
+    <p class="slide__label reveal">how each task gets finished</p>
+    <h2 class="slide__heading reveal">Every task passes 4 checks. No shortcuts.</h2>
+    <p class="slide__body reveal" style="margin-top:8px; max-width:80ch;">The spec lists every task to build — picked one at a time. Skip a check and the task loops back. Marked <strong style="color:var(--accent);">done</strong> only when all four pass.</p>
     <div class="pipeline reveal">
       <div class="pipeline__step" style="border-top-color:var(--accent);">
-        <div class="pipeline__num">01 · BUILD</div>
-        <div class="pipeline__name">Story landed</div>
-        <div class="pipeline__desc">Executor implements one story per its acceptance criteria.</div>
+        <div class="pipeline__num">01 · WRITE</div>
+        <div class="pipeline__name">Code it</div>
+        <div class="pipeline__desc">Claude writes the feature from the task description.</div>
       </div>
       <div class="pipeline__arrow"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 12h14m-4-4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="pipeline__step" style="border-top-color:var(--accent-2);">
         <div class="pipeline__num">02 · TEST</div>
-        <div class="pipeline__name">game-test</div>
-        <div class="pipeline__desc">HTML5 → Playwright auto. Native → test recipe + manual prompt.</div>
+        <div class="pipeline__name">Test it</div>
+        <div class="pipeline__desc">Auto-run a browser test. If it can't, write steps a human can check.</div>
       </div>
       <div class="pipeline__arrow"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 12h14m-4-4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="pipeline__step" style="border-top-color:var(--accent-3);">
-        <div class="pipeline__num">03 · GATE</div>
-        <div class="pipeline__name">Playable check</div>
-        <div class="pipeline__desc">Launch runtime. First screen from the UX flow must render. Unit-green ≠ playable.</div>
+        <div class="pipeline__num">03 · PLAY</div>
+        <div class="pipeline__name">Actually open the game</div>
+        <div class="pipeline__desc">Launch it for real. The screen must show up. Passing tests isn't enough.</div>
       </div>
       <div class="pipeline__arrow"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 12h14m-4-4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="pipeline__step" style="border-top-color:var(--yellow);">
-        <div class="pipeline__num">04 · MARK</div>
-        <div class="pipeline__name">Story = done</div>
-        <div class="pipeline__desc">Only after gate passes. Else auto-spawn UI-INT-001 wiring story.</div>
+        <div class="pipeline__num">04 · DONE</div>
+        <div class="pipeline__name">Mark it done</div>
+        <div class="pipeline__desc">Only when all three above pass. Anything missing? Add a fix-it task.</div>
       </div>
     </div>
   </section>
