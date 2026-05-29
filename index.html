@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>game-forge — How I Automated My Games</title>
+<title>game-forge, How I Automated My Games</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -340,57 +340,6 @@
     </div>
   </section>
 
-  <!-- 20f. GAME 2 full-bleed (deckbuilder shop) -->
-  <section class="slide slide--bleed">
-    <div class="slide__bg" style="background:#2a1f18 url('assets/game-forge/game2-shop.png') center/cover no-repeat;"></div>
-    <div class="slide__scrim" style="background: linear-gradient(to top, rgba(0,0,0,.8) 0%, rgba(0,0,0,.2) 50%, transparent 100%);"></div>
-    <div class="slide__content">
-      <p class="slide__label reveal" style="color:rgba(80,250,123,.85);">game · dice roguelike</p>
-      <h2 class="slide__heading reveal">Relics, Forge, Items — full economy.</h2>
-      <p class="slide__subtitle reveal" style="color:rgba(255,255,255,.75); margin-top:8px;">Act/Blind progression · 6 relics priced &amp; described · Sell slot · Next-Blind target · NPC patter. UI hand-illustrated, all generated.</p>
-    </div>
-  </section>
-
-  <!-- 20g. GAME 2 split — play screen -->
-  <section class="slide slide--split">
-    <div class="slide__panels" style="grid-template-columns:3fr 2fr;">
-      <div class="slide__panel" style="background:#1a1410; padding:0; position:relative;">
-        <img src="assets/game-forge/game2-play.png" alt="dice play screen" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
-      </div>
-      <div class="slide__panel" style="background:var(--surface); gap:14px;">
-        <p class="slide__label reveal" style="color:var(--accent);">play screen · combos</p>
-        <h2 class="slide__heading reveal" style="font-size:clamp(22px,3.2vw,32px);">Multi-Pair lands +700.</h2>
-        <ul class="slide__bullets" style="margin-top:6px;">
-          <li class="reveal"><strong>7 combo tiers</strong> — Pair → Quint</li>
-          <li class="reveal">Element dice — fire / water / wind</li>
-          <li class="reveal">Boss card · Ash Hound · Servant of Pyroclast</li>
-          <li class="reveal">Score breakdown: Base · Dice · Relics · ×Mult</li>
-        </ul>
-        <p class="reveal" style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim); margin-top:8px; padding-top:12px; border-top:1px solid var(--border);">
-          the spec's Mechanics Catalog → playable in browser.
-        </p>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- 4b. GALLERY: alien-waves assets -->
-  <section class="slide" style="padding: clamp(20px,3vh,40px) clamp(20px,3vw,48px); gap: clamp(10px,1.5vh,16px);">
-    <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;">
-      <p class="slide__label reveal" style="margin-bottom:0;">alien-waves · generated asset set</p>
-      <h2 class="slide__heading reveal" style="font-size:clamp(22px,3vw,32px);">Every sprite, every UI piece — Claude-native SVG.</h2>
-    </div>
-    <div class="reveal" style="position:relative; flex:1; min-height:0; background:#0a0e14; border:1px solid var(--border-bright); border-radius:10px; overflow:hidden; box-shadow: 0 20px 60px rgba(0,0,0,.4);">
-      <iframe src="alien-waves-gallery.html" title="alien-waves asset gallery" style="width:100%; height:100%; border:0; display:block; background:#1a1a2e;" loading="lazy"></iframe>
-      <div style="position:absolute; top:10px; right:10px; padding:6px 12px; background:rgba(10,14,20,.85); border:1px solid var(--border-bright); border-radius:6px; font-family:var(--font-mono); font-size:11px; color:var(--text-dim); pointer-events:none; backdrop-filter: blur(6px);">
-        scroll / click inside frame to explore
-      </div>
-    </div>
-    <p class="reveal" style="font-family:var(--font-mono); font-size: clamp(11px,1.2vw,13px); color:var(--text-dim); line-height:1.55;">
-      Generated via <strong style="color:var(--accent);">game-asset-forge</strong> · 10–20 parallel sub-agents · each ran its own visual critique loop until ≥90% match to style guide.
-      &nbsp;·&nbsp; per-asset prompt: <strong style="color:var(--accent-3);">N/A</strong> <span style="opacity:.7;">(not captured at gen-time — workspace only stored renders, not invocations)</span>
-    </p>
-  </section>
 
   <!-- 3. QUOTE: thesis -->
   <section class="slide slide--quote" style="background-image: radial-gradient(ellipse at 50% 50%, var(--accent-dim) 0%, transparent 40%);">
@@ -398,7 +347,7 @@
     <blockquote class="reveal">
       Game projects die at <span class="accent">fuzzy design</span> and <span class="accent">fuzzy testing</span>.
     </blockquote>
-    <cite class="reveal">— game-forge SKILL.md, line 12</cite>
+    <cite class="reveal">game-forge SKILL.md, line 12</cite>
   </section>
 
 
@@ -437,7 +386,7 @@ flowchart LR
 
   <!-- 8b. CONTENT: alien-waves sample interview -->
   <section class="slide" style="background-image:radial-gradient(ellipse at 80% 20%, var(--accent-dim) 0%, transparent 50%);">
-    <p class="slide__label reveal">Phase 1 — Deep Interview · worked example</p>
+    <p class="slide__label reveal">Phase 1, Deep Interview · worked example</p>
     <h2 class="slide__heading reveal">What the interview asked for <em>alien-waves</em>.</h2>
     <p class="slide__body reveal" style="margin-top:8px; max-width:90ch;">6 dimensions × ~5 questions each. Below: one representative probe per dimension. Each answer feeds the LLM judge that scores <code style="color:var(--accent);">a<sub>i</sub></code> on the next slide.</p>
     <div class="reveal" style="display:grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 1fr); gap: clamp(12px,1.8vw,20px); margin-top: clamp(18px,2.5vh,28px); flex:1; min-height:0;">
@@ -456,7 +405,7 @@ flowchart LR
           <span style="font-family:var(--font-mono); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent-2);">Feel</span>
           <span style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim);">w = 0.15</span>
         </div>
-        <p style="font-family:var(--font-display); font-size: clamp(14px,1.5vw,17px); font-weight:600; line-height:1.4; color:var(--text);">"When a kill lands, what makes it satisfying — sound, screen-shake, freeze-frame? Name a reference game."</p>
+        <p style="font-family:var(--font-display); font-size: clamp(14px,1.5vw,17px); font-weight:600; line-height:1.4; color:var(--text);">"When a kill lands, what makes it satisfying, sound, screen-shake, freeze-frame? Name a reference game."</p>
         <p style="font-size: clamp(11px,1.1vw,13px); color:var(--text-dim); line-height:1.5; font-family:var(--font-mono);">probes: input-to-feedback latency, juice</p>
       </div>
 
@@ -483,7 +432,7 @@ flowchart LR
           <span style="font-family:var(--font-mono); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--orange);">Constraints</span>
           <span style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim);">w = 0.15</span>
         </div>
-        <p style="font-family:var(--font-display); font-size: clamp(14px,1.5vw,17px); font-weight:600; line-height:1.4; color:var(--text);">"Engine? Multiplayer wire — WebRTC P2P or server-authoritative?"</p>
+        <p style="font-family:var(--font-display); font-size: clamp(14px,1.5vw,17px); font-weight:600; line-height:1.4; color:var(--text);">"Engine? Multiplayer wire, WebRTC P2P or server-authoritative?"</p>
         <p style="font-size: clamp(11px,1.1vw,13px); color:var(--text-dim); line-height:1.5; font-family:var(--font-mono);">probes: stack, export target, deps</p>
       </div>
 
@@ -492,7 +441,7 @@ flowchart LR
           <span style="font-family:var(--font-mono); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent);">Success</span>
           <span style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim);">w = 0.15</span>
         </div>
-        <p style="font-family:var(--font-display); font-size: clamp(14px,1.5vw,17px); font-weight:600; line-height:1.4; color:var(--text);">"After one playtest, what single observation proves the game works — or kills it?"</p>
+        <p style="font-family:var(--font-display); font-size: clamp(14px,1.5vw,17px); font-weight:600; line-height:1.4; color:var(--text);">"After one playtest, what single observation proves the game works, or kills it?"</p>
         <p style="font-size: clamp(11px,1.1vw,13px); color:var(--text-dim); line-height:1.5; font-family:var(--font-mono);">probes: pass/fail criterion · measurable</p>
       </div>
 
@@ -503,9 +452,9 @@ flowchart LR
   <section class="slide slide--content slide--grid" style="background-image:radial-gradient(ellipse at 20% 80%, var(--accent-dim) 0%, transparent 50%);">
     <div class="slide__inner">
       <div>
-        <p class="slide__label reveal">Phase 1 — Deep Interview · ambiguity gate</p>
+        <p class="slide__label reveal">Phase 1, Deep Interview · ambiguity gate</p>
         <h2 class="slide__heading reveal">When is the spec clear <em>enough</em>?</h2>
-        <p class="slide__body reveal" style="margin-top:8px;">The interview exits only when remaining ambiguity drops below <strong style="color:var(--accent);">A* = 0.15</strong>. A score in <code style="color:var(--accent);">[0, 1]</code> derived from 6 dimensions of clarity — each scored by an LLM judge against the current spec, weighted, summed.</p>
+        <p class="slide__body reveal" style="margin-top:8px;">The interview exits only when remaining ambiguity drops below <strong style="color:var(--accent);">A* = 0.15</strong>. A score in <code style="color:var(--accent);">[0, 1]</code> derived from 6 dimensions of clarity, each scored by an LLM judge against the current spec, weighted, summed.</p>
         <div class="reveal" style="margin-top:18px; padding:20px 24px; background:var(--code-bg); border:1px solid var(--border-bright); border-radius:10px; font-family:var(--font-mono); color:var(--code-text);">
           <div style="font-size: clamp(18px,2.4vw,28px); line-height:1.5; text-align:center; letter-spacing:.5px;">
             <span style="color:var(--accent-3);">A</span>(spec) = <span style="color:var(--accent);">Σ</span><sub style="color:var(--text-dim);">i=1..6</sub> &nbsp;<span style="color:var(--accent-2);">w</span><sub>i</sub> · <span style="color:var(--yellow);">a</span><sub>i</sub>(spec)
@@ -541,9 +490,9 @@ flowchart LR
   <section class="slide slide--split">
     <div class="slide__panels">
       <div class="slide__panel slide__panel--primary">
-        <p class="slide__label reveal">Phase 2 — Critique</p>
+        <p class="slide__label reveal">Phase 2, Critique</p>
         <h2 class="slide__heading reveal" style="font-size:clamp(24px,3.8vw,42px);">3 critics in parallel.</h2>
-        <p class="slide__body reveal" style="margin-top:8px;">Adversarial review before spec crystallization. Non-negotiable. If any critic flags a fundamental break, loop back to Phase 1 — don't patch.</p>
+        <p class="slide__body reveal" style="margin-top:8px;">Adversarial review before spec crystallization. Non-negotiable. If any critic flags a fundamental break, loop back to Phase 1, don't patch.</p>
         <div class="reveal" style="margin-top:16px; padding:14px 16px; background:var(--accent-dim); border-left:3px solid var(--accent); border-radius:4px; font-family:var(--font-mono); font-size:12px; color:var(--text);">
           per-critique decision: <span style="color:var(--accent);">address</span> / <span style="color:var(--orange);">accept risk</span> / <span style="color:var(--text-dim);">defer post-MVP</span>
         </div>
@@ -573,12 +522,12 @@ flowchart LR
   <section class="slide slide--terminal">
     <div class="term-head">
       <p class="slide__label">live capture · P2 → P3</p>
-      <h2 class="slide__heading" style="font-size:clamp(22px,3.2vw,34px);">3 critics + 8 spec writers — in flight.</h2>
+      <h2 class="slide__heading" style="font-size:clamp(22px,3.2vw,34px);">3 critics + 8 spec writers, in flight.</h2>
     </div>
     <div class="terminal-frame reveal">
       <div class="terminal-bar">
         <span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span>
-        <span class="terminal-title">~/game-forge — HUD · session 108m · 6 local agents</span>
+        <span class="terminal-title">~/game-forge, HUD · session 108m · 6 local agents</span>
       </div>
       <div class="terminal-body"><img src="assets/game-forge/critics-hud.png" alt="HUD showing 3 critics and spec writers"></div>
     </div>
@@ -591,11 +540,11 @@ flowchart LR
   <section class="slide slide--content slide--grid" style="background-image:radial-gradient(ellipse at 10% 20%, var(--accent-dim) 0%, transparent 50%);">
     <div class="slide__inner">
       <div>
-        <p class="slide__label reveal">Phase 3 — write the full plan</p>
+        <p class="slide__label reveal">Phase 3, write the full plan</p>
         <h2 class="slide__heading reveal">Three rules for a spec Claude can actually build from.</h2>
         <p class="slide__body reveal" style="margin-top:8px;">Named after Andrej Karpathy's pattern: don't summarize, don't hand-wave, don't aspire. Spell it out so an AI can execute mechanically.</p>
         <ul class="slide__bullets" style="margin-top:14px;">
-          <li class="reveal"><strong>Write everything down.</strong> Every decision in the doc — even the ones you rejected, and why.</li>
+          <li class="reveal"><strong>Write everything down.</strong> Every decision in the doc, even the ones you rejected, and why.</li>
           <li class="reveal"><strong>Use numbers, not vibes.</strong> "Fast" isn't a spec. "Player runs at 4 tiles / sec" is.</li>
           <li class="reveal"><strong>Every feature has a way to prove it works.</strong> If you can't test it, you can't ship it.</li>
           <li class="reveal" style="color:var(--text); font-family:var(--font-mono); font-size:clamp(13px,1.4vw,15px); padding-top:6px;">~7000 lines · 14 sections · written by <strong>8 AI agents in parallel</strong></li>
@@ -627,33 +576,33 @@ flowchart LR
   <section class="slide" style="background-image:radial-gradient(ellipse at 80% 80%, var(--accent-dim) 0%, transparent 50%);">
     <p class="slide__label reveal">where the 3 rules show up</p>
     <h2 class="slide__heading reveal">Each rule plugs into a different part of the flow.</h2>
-    <div class="reveal" style="display:grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px,2vw,24px); margin-top: clamp(20px,3vh,32px); flex:1; min-height:0;">
+    <div class="reveal" style="display:grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px,1.6vw,22px); margin-top: clamp(20px,3vh,32px);">
 
-      <div style="background:var(--surface); border:1px solid var(--border); border-top:3px solid var(--accent); border-radius:10px; padding: clamp(16px,2.5vh,24px); display:flex; flex-direction:column; gap:10px;">
+      <div style="background:var(--surface); border:1px solid var(--border); border-top:3px solid var(--accent); border-radius:10px; padding: clamp(12px,1.6vh,16px) clamp(14px,1.8vw,20px); display:flex; flex-direction:column; gap:7px;">
         <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent);">Rule 1 · Write everything down</div>
-        <div style="font-family:var(--font-display); font-size: clamp(16px,1.9vw,22px); font-weight:700; letter-spacing:-.3px;">No detail left to "we'll figure it out"</div>
+        <div style="font-family:var(--font-display); font-size: clamp(14px,1.6vw,18px); font-weight:700; letter-spacing:-.3px;">No detail left to "we'll figure it out"</div>
         <div style="font-size: clamp(12px,1.3vw,15px); color:var(--text-dim); line-height:1.55;">
-          <strong style="color:var(--text);">Shows up in:</strong> Phase 1 Interview keeps asking until every dimension is answered. Phase 3 writes the full doc — including rejected ideas + why.
+          <strong style="color:var(--text);">Shows up in:</strong> Phase 1 Interview keeps asking until every dimension is answered. Phase 3 writes the full doc, including rejected ideas + why.
         </div>
         <div style="margin-top:auto; padding-top:10px; border-top:1px solid var(--border); font-family:var(--font-mono); font-size:11px; color:var(--orange);">
           skip it → AI invents what you didn't decide
         </div>
       </div>
 
-      <div style="background:var(--surface); border:1px solid var(--border); border-top:3px solid var(--accent-2); border-radius:10px; padding: clamp(16px,2.5vh,24px); display:flex; flex-direction:column; gap:10px;">
+      <div style="background:var(--surface); border:1px solid var(--border); border-top:3px solid var(--accent-2); border-radius:10px; padding: clamp(12px,1.6vh,16px) clamp(14px,1.8vw,20px); display:flex; flex-direction:column; gap:7px;">
         <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent-2);">Rule 2 · Numbers, not vibes</div>
-        <div style="font-family:var(--font-display); font-size: clamp(16px,1.9vw,22px); font-weight:700; letter-spacing:-.3px;">Every claim is measurable</div>
+        <div style="font-family:var(--font-display); font-size: clamp(14px,1.6vw,18px); font-weight:700; letter-spacing:-.3px;">Every claim is measurable</div>
         <div style="font-size: clamp(12px,1.3vw,15px); color:var(--text-dim); line-height:1.55;">
-          <strong style="color:var(--text);">Shows up in:</strong> Phase 3 spec uses state machines + numbers w/ units. Phase 6 tests can then assert exact values — not "feels fast."
+          <strong style="color:var(--text);">Shows up in:</strong> Phase 3 spec uses state machines + numbers w/ units. Phase 6 tests can then assert exact values, not "feels fast."
         </div>
         <div style="margin-top:auto; padding-top:10px; border-top:1px solid var(--border); font-family:var(--font-mono); font-size:11px; color:var(--orange);">
           skip it → tests can't tell pass from fail
         </div>
       </div>
 
-      <div style="background:var(--surface); border:1px solid var(--border); border-top:3px solid var(--accent-3); border-radius:10px; padding: clamp(16px,2.5vh,24px); display:flex; flex-direction:column; gap:10px;">
+      <div style="background:var(--surface); border:1px solid var(--border); border-top:3px solid var(--accent-3); border-radius:10px; padding: clamp(12px,1.6vh,16px) clamp(14px,1.8vw,20px); display:flex; flex-direction:column; gap:7px;">
         <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent-3);">Rule 3 · Provable features</div>
-        <div style="font-family:var(--font-display); font-size: clamp(16px,1.9vw,22px); font-weight:700; letter-spacing:-.3px;">Untestable = unshippable</div>
+        <div style="font-family:var(--font-display); font-size: clamp(14px,1.6vw,18px); font-weight:700; letter-spacing:-.3px;">Untestable = unshippable</div>
         <div style="font-size: clamp(12px,1.3vw,15px); color:var(--text-dim); line-height:1.55;">
           <strong style="color:var(--text);">Shows up in:</strong> Phase 6 runs unit + integration tests automatically. Phase 6.5 opens the game in Playwright + screenshots prove the effect.
         </div>
@@ -674,12 +623,29 @@ flowchart LR
     <div class="terminal-frame reveal">
       <div class="terminal-bar">
         <span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span>
-        <span class="terminal-title">~/game-forge — spec drift · user decision required</span>
+        <span class="terminal-title">~/game-forge, spec drift · user decision required</span>
       </div>
       <div class="terminal-body"><img src="assets/game-forge/drift.png" alt="Drift detection prompt during spec assembly"></div>
     </div>
     <p class="term-caption reveal">
-      6034 lines aggregated. <strong>22 section markers conflict</strong> on wave count + item count. Group H flags downstream math (R-ITEM-BUDGET) makes 20-wave version near-impossible. Skill <strong>blocks Phase 4 until the user picks one</strong> — no silent reconciliation, no drift in shipped spec.
+      6034 lines aggregated. <strong>22 section markers conflict</strong> on wave count + item count. Group H flags downstream math (R-ITEM-BUDGET) makes 20-wave version near-impossible. Skill <strong>blocks Phase 4 until the user picks one</strong>, no silent reconciliation, no drift in shipped spec.
+    </p>
+  </section>
+  <!-- 4b. GALLERY: alien-waves assets -->
+  <section class="slide" style="padding: clamp(20px,3vh,40px) clamp(20px,3vw,48px); gap: clamp(10px,1.5vh,16px);">
+    <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;">
+      <p class="slide__label reveal" style="margin-bottom:0;">alien-waves · generated asset set</p>
+      <h2 class="slide__heading reveal" style="font-size:clamp(22px,3vw,32px);">Every sprite, every UI piece, Claude-native SVG.</h2>
+    </div>
+    <div class="reveal" style="position:relative; flex:1; min-height:0; background:#0a0e14; border:1px solid var(--border-bright); border-radius:10px; overflow:hidden; box-shadow: 0 20px 60px rgba(0,0,0,.4);">
+      <iframe src="alien-waves-gallery.html" title="alien-waves asset gallery" style="width:100%; height:100%; border:0; display:block; background:#1a1a2e;" loading="lazy"></iframe>
+      <div style="position:absolute; top:10px; right:10px; padding:6px 12px; background:rgba(10,14,20,.85); border:1px solid var(--border-bright); border-radius:6px; font-family:var(--font-mono); font-size:11px; color:var(--text-dim); pointer-events:none; backdrop-filter: blur(6px);">
+        scroll / click inside frame to explore
+      </div>
+    </div>
+    <p class="reveal" style="font-family:var(--font-mono); font-size: clamp(11px,1.2vw,13px); color:var(--text-dim); line-height:1.55;">
+      Generated via <strong style="color:var(--accent);">game-asset-forge</strong> · 10–20 parallel sub-agents · each ran its own visual critique loop until ≥90% match to style guide.
+      &nbsp;·&nbsp; per-asset prompt: <strong style="color:var(--accent-3);">N/A</strong> <span style="opacity:.7;">(not captured at gen-time, workspace only stored renders, not invocations)</span>
     </p>
   </section>
 
@@ -688,7 +654,7 @@ flowchart LR
 
   <!-- 15. FORK: overnight vs manual -->
   <section class="slide" style="background-image:radial-gradient(ellipse at 80% 20%, var(--accent-dim) 0%, transparent 45%);">
-    <p class="slide__label reveal">Phase 5 — Build Loop</p>
+    <p class="slide__label reveal">Phase 5, Build Loop</p>
     <h2 class="slide__heading reveal">One decision. Default = overnight.</h2>
     <div class="fork">
       <div class="fork__card fork__card--default reveal">
@@ -723,7 +689,7 @@ flowchart LR
   <span class="hl">"project_slug"</span>: <span class="str">"alien-waves"</span>,
   <span class="hl">"spec_path"</span>: <span class="str">"specs/alien-waves-spec.md"</span>,
 
-  <span class="cm">// budget caps — watchdog self-disarms on hit</span>
+  <span class="cm">// budget caps, watchdog self-disarms on hit</span>
   <span class="hl">"max_hours"</span>: <span class="num">12</span>,
   <span class="hl">"max_iterations"</span>: <span class="num">240</span>,
   <span class="hl">"max_cost_usd"</span>: <span class="num">50</span>,
@@ -744,7 +710,7 @@ flowchart LR
   <section class="slide" style="background-image:radial-gradient(ellipse at 30% 30%, var(--accent-dim) 0%, transparent 45%);">
     <p class="slide__label reveal">how each task gets finished</p>
     <h2 class="slide__heading reveal">Every task passes 4 checks. No shortcuts.</h2>
-    <p class="slide__body reveal" style="margin-top:8px; max-width:80ch;">The spec lists every task to build — picked one at a time. Skip a check and the task loops back. Marked <strong style="color:var(--accent);">done</strong> only when all four pass.</p>
+    <p class="slide__body reveal" style="margin-top:8px; max-width:80ch;">The spec lists every task to build, picked one at a time. Skip a check and the task loops back. Marked <strong style="color:var(--accent);">done</strong> only when all four pass.</p>
     <div class="pipeline reveal">
       <div class="pipeline__step" style="border-top-color:var(--accent);">
         <div class="pipeline__num">01 · WRITE</div>
@@ -761,7 +727,7 @@ flowchart LR
       <div class="pipeline__step" style="border-top-color:var(--accent-3);">
         <div class="pipeline__num">03 · PLAY</div>
         <div class="pipeline__name">Open the game (automated)</div>
-        <div class="pipeline__desc">Playwright (or click-bot) opens the browser, clicks through the game, saves a screenshot before &amp; after each action — proof the effect is visible.</div>
+        <div class="pipeline__desc">Playwright (or click-bot) opens the browser, clicks through the game, saves a screenshot before &amp; after each action, proof the effect is visible.</div>
       </div>
       <div class="pipeline__arrow"><svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 12h14m-4-4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <div class="pipeline__step" style="border-top-color:var(--accent);">
@@ -906,7 +872,49 @@ flowchart TB
     <blockquote class="reveal">
       The spec is the <span class="accent">source of truth</span>.<br/>Drift kills the project.
     </blockquote>
-    <cite class="reveal">— game-forge, phase 7</cite>
+    <cite class="reveal">game-forge, phase 7</cite>
+  </section>
+
+  <!-- 22b. DIVIDER: more games -->
+  <section class="slide slide--divider" style="background-image:radial-gradient(ellipse at 60% 60%, var(--accent-dim) 0%, transparent 45%);">
+    <span class="slide__number">+1</span>
+    <div>
+      <p class="slide__label reveal">same skill, different genre</p>
+      <h2 class="slide__heading reveal">More games?</h2>
+      <p class="slide__subtitle reveal" style="margin-top:12px;">the dice roguelike, also shipped through the pipeline</p>
+    </div>
+  </section>
+  <!-- 20f. GAME 2 full-bleed (deckbuilder shop) -->
+  <section class="slide slide--bleed">
+    <div class="slide__bg" style="background:#2a1f18 url('assets/game-forge/game2-shop.png') center/cover no-repeat;"></div>
+    <div class="slide__scrim" style="background: linear-gradient(to top, rgba(0,0,0,.8) 0%, rgba(0,0,0,.2) 50%, transparent 100%);"></div>
+    <div class="slide__content">
+      <p class="slide__label reveal" style="color:rgba(80,250,123,.85);">game · dice roguelike</p>
+      <h2 class="slide__heading reveal">Relics, Forge, Items, full economy.</h2>
+      <p class="slide__subtitle reveal" style="color:rgba(255,255,255,.75); margin-top:8px;">Act/Blind progression · 6 relics priced &amp; described · Sell slot · Next-Blind target · NPC patter. UI hand-illustrated, all generated.</p>
+    </div>
+  </section>
+
+  <!-- 20g. GAME 2 split, play screen -->
+  <section class="slide slide--split">
+    <div class="slide__panels" style="grid-template-columns:3fr 2fr;">
+      <div class="slide__panel" style="background:#1a1410; padding:0; position:relative;">
+        <img src="assets/game-forge/game2-play.png" alt="dice play screen" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;">
+      </div>
+      <div class="slide__panel" style="background:var(--surface); gap:14px;">
+        <p class="slide__label reveal" style="color:var(--accent);">play screen · combos</p>
+        <h2 class="slide__heading reveal" style="font-size:clamp(22px,3.2vw,32px);">Multi-Pair lands +700.</h2>
+        <ul class="slide__bullets" style="margin-top:6px;">
+          <li class="reveal"><strong>7 combo tiers</strong>, Pair → Quint</li>
+          <li class="reveal">Element dice, fire / water / wind</li>
+          <li class="reveal">Boss card · Ash Hound · Servant of Pyroclast</li>
+          <li class="reveal">Score breakdown: Base · Dice · Relics · ×Mult</li>
+        </ul>
+        <p class="reveal" style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim); margin-top:8px; padding-top:12px; border-top:1px solid var(--border);">
+          the spec's Mechanics Catalog → playable in browser.
+        </p>
+      </div>
+    </div>
   </section>
 
 
