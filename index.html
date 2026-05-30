@@ -135,8 +135,6 @@
   .slide--diagram .mermaid svg { width:100%!important; height:auto!important; max-width:100%!important; }
   .slide--diagram .mermaid .nodeLabel { font-size:17px!important; }
   .slide--diagram .mermaid .edgeLabel { font-size:13px!important; font-family: var(--font-mono)!important; }
-  .mermaid-wrap--large .mermaid { min-width: max-content; }
-  .mermaid-wrap--large .mermaid svg { width:auto!important; height:auto!important; max-width:none!important; }
   .mermaid-wrap--large .mermaid .nodeLabel { font-size:22px!important; font-weight:600!important; }
   .mermaid-wrap--large .mermaid .edgeLabel { font-size:16px!important; }
   .mermaid-wrap--large .mermaid .cluster-label { font-size:20px!important; font-weight:700!important; }
@@ -1022,7 +1020,7 @@ flowchart TB
       }
     });
   }
-  mermaid.run().then(function(){ autoFit(); new SlideEngine(); });
+  mermaid.run().then(function(){ autoFit(); document.querySelectorAll('.mermaid-wrap--large .mermaid').forEach(function(t){ t.style.zoom = 1.4; t.dataset.zoom = 1.4; }); new SlideEngine(); });
 </script>
 
 <script>
