@@ -135,7 +135,8 @@
   .slide--diagram .mermaid svg { width:100%!important; height:auto!important; max-width:100%!important; }
   .slide--diagram .mermaid .nodeLabel { font-size:17px!important; }
   .slide--diagram .mermaid .edgeLabel { font-size:13px!important; font-family: var(--font-mono)!important; }
-  .mermaid-wrap--large .mermaid svg { width:auto!important; max-width:none!important; }
+  .mermaid-wrap--large .mermaid { min-width: max-content; }
+  .mermaid-wrap--large .mermaid svg { width:auto!important; height:auto!important; max-width:none!important; }
   .mermaid-wrap--large .mermaid .nodeLabel { font-size:22px!important; font-weight:600!important; }
   .mermaid-wrap--large .mermaid .edgeLabel { font-size:16px!important; }
   .mermaid-wrap--large .mermaid .cluster-label { font-size:20px!important; font-weight:700!important; }
@@ -483,6 +484,61 @@ flowchart LR
           </table>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- 9b. CONTENT: how answers drive the score -->
+  <section class="slide" style="background-image:radial-gradient(ellipse at 20% 20%, var(--accent-dim) 0%, transparent 50%);">
+    <p class="slide__label reveal">Phase 1, scoring loop</p>
+    <h2 class="slide__heading reveal">Each answer drops one ambiguity score.</h2>
+    <p class="slide__body reveal" style="margin-top:8px; max-width:90ch;">
+      Every round, the judge re-reads the spec and re-scores each dimension's <code style="color:var(--accent);">a<sub>i</sub></code> from 0 (crystal clear) to 1 (no idea). A good answer pulls its dimension's score down. Weights <code style="color:var(--accent-2);">w<sub>i</sub></code> stay fixed, so Core Loop matters 1.67× more than the others.
+    </p>
+
+    <div class="reveal" style="display:grid; grid-template-columns: 1fr 1fr; gap: clamp(16px,2vw,28px); margin-top: clamp(16px,2.2vh,24px);">
+
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding: clamp(14px,1.8vh,20px) clamp(16px,1.8vw,24px);">
+        <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent); margin-bottom:10px;">Worked example, alien-waves</div>
+        <table style="width:100%; border-collapse:collapse; font-family:var(--font-mono); font-size: clamp(11px,1.2vw,13px);">
+          <thead>
+            <tr style="border-bottom:1px solid var(--border-bright);">
+              <th style="text-align:left; padding:6px 8px; color:var(--text-dim); font-weight:600;">round</th>
+              <th style="text-align:right; padding:6px 8px; color:var(--accent);">loop</th>
+              <th style="text-align:right; padding:6px 8px; color:var(--accent-2);">feel</th>
+              <th style="text-align:right; padding:6px 8px; color:var(--accent-3);">scope</th>
+              <th style="text-align:right; padding:6px 8px; color:var(--yellow);">goal</th>
+              <th style="text-align:right; padding:6px 8px; color:var(--orange);">cons</th>
+              <th style="text-align:right; padding:6px 8px; color:var(--accent);">succ</th>
+              <th style="text-align:right; padding:6px 8px; color:var(--text); font-weight:700;">A</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:6px 8px; color:var(--text-dim);">0 start</td><td style="text-align:right; padding:6px 8px;">.80</td><td style="text-align:right; padding:6px 8px;">.90</td><td style="text-align:right; padding:6px 8px;">.95</td><td style="text-align:right; padding:6px 8px;">.70</td><td style="text-align:right; padding:6px 8px;">.85</td><td style="text-align:right; padding:6px 8px;">.90</td><td style="text-align:right; padding:6px 8px; color:var(--orange); font-weight:700;">.84</td></tr>
+            <tr style="border-bottom:1px solid var(--border); background:var(--surface2);"><td style="padding:6px 8px; color:var(--text-dim);">5</td><td style="text-align:right; padding:6px 8px;">.40</td><td style="text-align:right; padding:6px 8px;">.70</td><td style="text-align:right; padding:6px 8px;">.50</td><td style="text-align:right; padding:6px 8px;">.30</td><td style="text-align:right; padding:6px 8px;">.40</td><td style="text-align:right; padding:6px 8px;">.55</td><td style="text-align:right; padding:6px 8px; color:var(--orange); font-weight:700;">.47</td></tr>
+            <tr style="border-bottom:1px solid var(--border);"><td style="padding:6px 8px; color:var(--text-dim);">12</td><td style="text-align:right; padding:6px 8px;">.15</td><td style="text-align:right; padding:6px 8px;">.30</td><td style="text-align:right; padding:6px 8px;">.20</td><td style="text-align:right; padding:6px 8px;">.10</td><td style="text-align:right; padding:6px 8px;">.15</td><td style="text-align:right; padding:6px 8px;">.20</td><td style="text-align:right; padding:6px 8px; color:var(--yellow); font-weight:700;">.18</td></tr>
+            <tr style="background:var(--accent-dim);"><td style="padding:6px 8px; color:var(--accent); font-weight:700;">18 exit</td><td style="text-align:right; padding:6px 8px;">.10</td><td style="text-align:right; padding:6px 8px;">.20</td><td style="text-align:right; padding:6px 8px;">.15</td><td style="text-align:right; padding:6px 8px;">.05</td><td style="text-align:right; padding:6px 8px;">.10</td><td style="text-align:right; padding:6px 8px;">.15</td><td style="text-align:right; padding:6px 8px; color:var(--accent); font-weight:700;">.12</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:12px;">
+
+        <div style="background:var(--code-bg); border:1px solid var(--border-bright); border-radius:10px; padding: clamp(14px,1.8vh,20px) clamp(16px,1.8vw,24px); font-family:var(--font-mono);">
+          <div style="font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent); margin-bottom:10px;">Round 18 math</div>
+          <div style="font-size: clamp(11px,1.2vw,14px); color:var(--code-text); line-height:1.9;">
+            A = <span style="color:var(--accent-2);">0.25</span>·<span style="color:var(--accent);">.10</span> + <span style="color:var(--accent-2);">0.15</span>·<span style="color:var(--accent-2);">.20</span> + <span style="color:var(--accent-2);">0.15</span>·<span style="color:var(--accent-3);">.15</span><br/>
+            &nbsp;&nbsp;&nbsp;+ <span style="color:var(--accent-2);">0.15</span>·<span style="color:var(--yellow);">.05</span> + <span style="color:var(--accent-2);">0.15</span>·<span style="color:var(--orange);">.10</span> + <span style="color:var(--accent-2);">0.15</span>·<span style="color:var(--accent);">.15</span><br/>
+            &nbsp;&nbsp;= .025+.030+.022+.007+.015+.022<br/>
+            &nbsp;&nbsp;= <span style="color:var(--accent); font-weight:700;">0.12</span> ≤ A* (0.15), <span style="color:var(--accent);">exit</span>
+          </div>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding: clamp(12px,1.6vh,18px) clamp(16px,1.8vw,22px); font-size: clamp(12px,1.3vw,15px); color:var(--text-dim); line-height:1.55;">
+          <strong style="color:var(--text);">Why Core Loop weights heaviest (0.25):</strong> if the moment-to-moment isn't crisp, every other section sits on quicksand. A vague Core Loop alone can keep A above the threshold even when the other five are nailed.
+        </div>
+
+      </div>
+
     </div>
   </section>
 
