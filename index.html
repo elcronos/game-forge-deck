@@ -972,6 +972,183 @@ flowchart TB
   </section>
 
 
+  <!-- 30. TIPS -->
+  <section class="slide" style="background-image:radial-gradient(ellipse at 20% 20%, var(--accent-dim) 0%, transparent 50%);">
+    <p class="slide__label reveal">what I learned shipping this</p>
+    <h2 class="slide__heading reveal">Two tips &amp; what I'm exploring next.</h2>
+    <div class="reveal" style="display:grid; grid-template-columns: repeat(3, 1fr); gap: clamp(12px,1.4vw,18px); margin-top: clamp(20px,3vh,32px);">
+
+      <div style="background:var(--surface); border:1px solid var(--border); border-top:3px solid var(--accent); border-radius:10px; padding: clamp(14px,1.8vh,20px) clamp(14px,1.7vw,20px); display:flex; flex-direction:column; gap:9px;">
+        <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:1.4px; text-transform:uppercase; color:var(--accent);">Tip 1 · spend tokens where they matter</div>
+        <div style="font-family:var(--font-display); font-size: clamp(16px,1.8vw,21px); font-weight:700; letter-spacing:-.3px;">Do as much in code as you can.</div>
+        <div style="font-size: clamp(12px,1.3vw,15px); color:var(--text-dim); line-height:1.55;">
+          Deterministic work, parsing, file ops, glue, lives in code. Save the model's context budget for the reasoning only an LLM can do.
+        </div>
+      </div>
+
+      <div style="background:var(--surface); border:1px solid var(--border); border-top:3px solid var(--accent-2); border-radius:10px; padding: clamp(14px,1.8vh,20px) clamp(14px,1.7vw,20px); display:flex; flex-direction:column; gap:9px;">
+        <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:1.4px; text-transform:uppercase; color:var(--accent-2);">Tip 2 · trust nothing, verify everything</div>
+        <div style="font-family:var(--font-display); font-size: clamp(16px,1.8vw,21px); font-weight:700; letter-spacing:-.3px;">Demand evidence from the LLMs.</div>
+        <div style="font-size: clamp(12px,1.3vw,15px); color:var(--text-dim); line-height:1.55;">
+          Unit tests, screenshots, files actually written on disk. "It works" is not proof, an artifact is. No artifact, no done.
+        </div>
+      </div>
+
+      <div style="background:var(--surface); border:1px solid var(--border); border-top:3px solid var(--accent-3); border-radius:10px; padding: clamp(14px,1.8vh,20px) clamp(14px,1.7vw,20px); display:flex; flex-direction:column; gap:9px;">
+        <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:1.4px; text-transform:uppercase; color:var(--accent-3);">Tip 3 · skills don't transfer for free</div>
+        <div style="font-family:var(--font-display); font-size: clamp(16px,1.8vw,21px); font-weight:700; letter-spacing:-.3px;">A skill is tuned to its model family.</div>
+        <div style="font-size: clamp(12px,1.3vw,15px); color:var(--text-dim); line-height:1.55;">
+          A skill generated with one model performs well across that family, but performance shifts across different harnesses and models. Re-optimise when you switch.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 31. DIVIDER: exploring next -->
+  <section class="slide slide--divider" style="background-image:radial-gradient(ellipse at 40% 40%, var(--accent-dim) 0%, transparent 45%);">
+    <span class="slide__number">→</span>
+    <div>
+      <p class="slide__label reveal">exploring next</p>
+      <h2 class="slide__heading reveal">Optimising my skills with SkillOpt &amp; meta-prompting.</h2>
+      <p class="slide__subtitle reveal" style="margin-top:12px;">train the skill document itself, the model and harness stay frozen</p>
+    </div>
+  </section>
+
+  <!-- 31b. GEPA: the prior art (DSPy) -->
+  <section class="slide slide--split">
+    <div class="slide__panels" style="grid-template-columns:2fr 3fr;">
+      <div class="slide__panel" style="background:#fff; padding:0; position:relative;">
+        <img src="assets/skillopt/11.png" alt="DSPy — Prompt Optimizing with GEPA" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:left top;">
+      </div>
+      <div class="slide__panel" style="background:var(--surface); gap:14px;">
+        <p class="slide__label reveal" style="color:var(--accent);">prior art · DSPy / GEPA</p>
+        <h2 class="slide__heading reveal" style="font-size:clamp(22px,3.2vw,34px);">The prompt is a parameter you can train.</h2>
+        <p class="slide__body reveal" style="margin-top:6px;">DSPy's GEPA replaces the hand-tuning loop: give it a training set + a metric, it generates instruction variants with an LM, runs your examples, and keeps the highest-scoring prompts.</p>
+        <ul class="slide__bullets" style="margin-top:8px;">
+          <li class="reveal"><strong>Reflection, not guessing.</strong> The optimiser reads failures and rewrites instructions.</li>
+          <li class="reveal"><strong>No model trivia needed.</strong> You don't learn which tricks a model likes, the optimiser finds them.</li>
+          <li class="reveal"><strong>Same idea, skill-scale.</strong> SkillOpt applies this to whole skill documents, not single prompts.</li>
+        </ul>
+        <p class="reveal" style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim); margin-top:6px; padding-top:10px; border-top:1px solid var(--border);">
+          stanfordnlp/dspy · "Prompt Optimizing with GEPA"
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 32. SkillOpt concept: skill-space landscape -->
+  <section class="slide slide--bleed" style="background:#f4f0fa;">
+    <img src="assets/skillopt/1.png" alt="SkillOpt skill-space optimization landscape" style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain; padding: clamp(20px,4vh,56px);">
+    <div class="slide__content">
+      <p class="slide__label reveal" style="color:#6c5ce7;">SkillOpt · core idea</p>
+      <h2 class="slide__heading reveal" style="color:#1a1330;">Gradient descent, but in text space.</h2>
+      <p class="slide__subtitle reveal" style="color:#3a2f5a; margin-top:8px;">The skill doc is the parameter · trajectory feedback is the gradient · a held-out gate is the validation check.</p>
+    </div>
+  </section>
+
+  <!-- 33. SkillOpt concept: train the procedure -->
+  <section class="slide slide--bleed" style="background:#efe9f7;">
+    <img src="assets/skillopt/2.png" alt="SkillOpt — train the procedure, not the weights" style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain; padding: clamp(20px,4vh,56px);">
+  </section>
+
+  <!-- 34. SkillOpt concept: training loop -->
+  <section class="slide slide--bleed" style="background:#efe9f7;">
+    <img src="assets/skillopt/3.png" alt="SkillOpt — a training loop for natural-language skills" style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain; padding: clamp(20px,4vh,56px);">
+  </section>
+
+  <!-- 35. DIVIDER: SkillOpt Suite -->
+  <section class="slide slide--divider" style="background-image:radial-gradient(ellipse at 60% 50%, var(--accent-dim) 0%, transparent 45%);">
+    <span class="slide__number">+</span>
+    <div>
+      <p class="slide__label reveal">examples weren't enough</p>
+      <h2 class="slide__heading reveal">So I built SkillOpt Suite.</h2>
+      <p class="slide__subtitle reveal" style="margin-top:12px;">it ships with example evals, but they're not general, my suite lets me write my own tests &amp; graders, then train and test on them</p>
+    </div>
+  </section>
+
+  <!-- 36. Suite: skills source view -->
+  <section class="slide slide--bleed" style="background:#0a0a0a;">
+    <img src="assets/skillopt/4.png" alt="SkillOpt Studio — discovered skills + source inspector" style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain;">
+    <div class="slide__content">
+      <p class="slide__label reveal" style="color:rgba(180,255,80,.9);">suite · skills</p>
+      <h2 class="slide__heading reveal">Discover &amp; inspect every skill.</h2>
+      <p class="slide__subtitle reveal" style="color:rgba(255,255,255,.7); margin-top:8px;">97 skills indexed across providers · source view · pick one to optimise.</p>
+    </div>
+  </section>
+
+  <!-- 37. Suite: skills graph view -->
+  <section class="slide slide--bleed" style="background:#0a0a0a;">
+    <img src="assets/skillopt/5.png" alt="SkillOpt Studio — skill structure graph" style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain;">
+    <div class="slide__content">
+      <p class="slide__label reveal" style="color:rgba(180,255,80,.9);">suite · structure graph</p>
+      <h2 class="slide__heading reveal">See the skill as a flow graph.</h2>
+      <p class="slide__subtitle reveal" style="color:rgba(255,255,255,.7); margin-top:8px;">steps, branches and decision nodes, before you touch the optimiser.</p>
+    </div>
+  </section>
+
+  <!-- 38. Suite: dataset -->
+  <section class="slide slide--bleed" style="background:#0a0a0a;">
+    <img src="assets/skillopt/6.png" alt="SkillOpt Studio — dataset builder with AI case generation" style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain;">
+    <div class="slide__content">
+      <p class="slide__label reveal" style="color:rgba(180,255,80,.9);">suite · my own tests</p>
+      <h2 class="slide__heading reveal">Build the dataset, split train / valid / test.</h2>
+      <p class="slide__subtitle reveal" style="color:rgba(255,255,255,.7); margin-top:8px;">hand-write cases or generate them with AI · deterministic ratio split.</p>
+    </div>
+  </section>
+
+  <!-- 39. Suite: grader -->
+  <section class="slide slide--bleed" style="background:#0a0a0a;">
+    <img src="assets/skillopt/7.png" alt="SkillOpt Studio — grader selection" style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain;">
+    <div class="slide__content">
+      <p class="slide__label reveal" style="color:rgba(180,255,80,.9);">suite · my own graders</p>
+      <h2 class="slide__heading reveal">Choose how each rollout is scored.</h2>
+      <p class="slide__subtitle reveal" style="color:rgba(255,255,255,.7); margin-top:8px;">exact · fuzzy · F1 · LLM judge · G-Eval · custom Python.</p>
+    </div>
+  </section>
+
+  <!-- 40. Suite: model -->
+  <section class="slide slide--bleed" style="background:#0a0a0a;">
+    <img src="assets/skillopt/8.png" alt="SkillOpt Studio — model and backend wiring" style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain;">
+    <div class="slide__content">
+      <p class="slide__label reveal" style="color:rgba(180,255,80,.9);">suite · model &amp; backend</p>
+      <h2 class="slide__heading reveal">Optimiser drives edits, target runs rollouts.</h2>
+      <p class="slide__subtitle reveal" style="color:rgba(255,255,255,.7); margin-top:8px;">mix backends · keys write-only · separate optimiser and target models.</p>
+    </div>
+  </section>
+
+  <!-- 41. Suite: launch -->
+  <section class="slide slide--bleed" style="background:#0a0a0a;">
+    <img src="assets/skillopt/9.png" alt="SkillOpt Studio — training launch config" style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain;">
+    <div class="slide__content">
+      <p class="slide__label reveal" style="color:rgba(180,255,80,.9);">suite · train &amp; test</p>
+      <h2 class="slide__heading reveal">Launch the run, gate on held-out.</h2>
+      <p class="slide__subtitle reveal" style="color:rgba(255,255,255,.7); margin-top:8px;">epochs · batch size · edit budget as learning rate · validation gating mandatory.</p>
+    </div>
+  </section>
+
+  <!-- 42. FUTURE: Pi as orchestrator -->
+  <section class="slide slide--split">
+    <div class="slide__panels" style="grid-template-columns:3fr 2fr;">
+      <div class="slide__panel" style="background:#ece9e3; padding:0; position:relative;">
+        <img src="assets/skillopt/10.png" alt="Pi — minimal terminal coding harness" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top;">
+      </div>
+      <div class="slide__panel" style="background:var(--surface); gap:14px;">
+        <p class="slide__label reveal" style="color:var(--accent);">where this goes next</p>
+        <h2 class="slide__heading reveal" style="font-size:clamp(22px,3.2vw,34px);">Pi as the orchestrator.</h2>
+        <p class="slide__body reveal" style="margin-top:6px;">A minimal terminal harness I adapt to my workflow, not the other way around. The plan: let Pi drive the loop, calling skills + SkillOpt as tools.</p>
+        <ul class="slide__bullets" style="margin-top:8px;">
+          <li class="reveal"><strong>Harness-agnostic.</strong> Same optimised skills, swap the driver underneath.</li>
+          <li class="reveal"><strong>Thin &amp; scriptable.</strong> Orchestration logic in code, model budget kept for reasoning.</li>
+          <li class="reveal"><strong>Owned end to end.</strong> Discover → optimise → run, one pipeline I control.</li>
+        </ul>
+        <p class="reveal" style="font-family:var(--font-mono); font-size:11px; color:var(--text-dim); margin-top:6px; padding-top:10px; border-top:1px solid var(--border);">
+          pi.dev · "many agent harnesses, but this one is yours"
+        </p>
+      </div>
+    </div>
+  </section>
+
 </div><!-- /deck -->
 
 <script type="module">
